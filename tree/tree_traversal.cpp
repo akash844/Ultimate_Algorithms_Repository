@@ -1,30 +1,31 @@
 # include <iostream>
 # include "create_tree.h"
+using namespace std;
 
 
-void preorder(Node* root){
+void preOrder(Node* root){
   if(root==nullptr){
     return;
   }
-  std::cout << root->data <<"->";
-  preorder(root->left_child);
-  preorder(root->right_child);
+  cout << root->data <<"->";
+  preOrder(root->left_child);
+  preOrder(root->right_child);
 }
 
-void inorder(Node* root){
+void inOrder(Node* root){
   if (root==nullptr)
-  return;
-  inorder(root->left_child);
-  std::cout << root->data <<"->";
-  inorder(root->right_child);
+    return;
+  inOrder(root->left_child);
+  cout << root->data <<"->";
+  inOrder(root->right_child);
 }
 
-void postorder(Node* root){
+void postOrder(Node* root){
   if(root==nullptr)
-  return;
-  postorder(root->left_child);
-  postorder(root->right_child);
-  std::cout << root->data <<"->" ;
+    return;
+  postOrder(root->left_child);
+  postOrder(root->right_child);
+  cout << root->data <<"->" ;
 }
 
 int main(){
@@ -40,11 +41,11 @@ int main(){
   tree.add_node(root,108);
   tree.add_node(root,95);
   tree.add_node(root,67);
-  preorder(root);
-  std::cout << "null" << '\n';
-  postorder(root);
-  std::cout << "null" << '\n';
-  inorder(root);
-  std::cout << "null" << '\n';
+  preOrder(root);
+  cout << "null" << '\n';
+  postOrder(root);
+  cout << "null" << '\n';
+  inOrder(root);
+  cout << "null" << '\n';
 
 }
